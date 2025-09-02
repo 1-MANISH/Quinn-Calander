@@ -7,7 +7,7 @@ An **interactive, mobile-optimized calendar** with **infinite vertical scrolling
 
 ## 🔗 Live Link
 
-Check out the live application here: [ Live Demo Link]([https://your-deployed-app.com](https://quinn-calander.vercel.app/))
+Check out the live application here: [ Live Demo Link]([https://your-deployed-app.com](https://quinn-calander.vercel.app/)
 
 ---
 
