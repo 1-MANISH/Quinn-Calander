@@ -95,7 +95,7 @@ const categoryColors = {
   '3': 'bg-orange-100 text-orange-600'
 }
 
-// Custom swipe hook
+
 const useSwipeGesture = (onSwipeLeft, onSwipeRight) => {
 
         const [touchStart, setTouchStart] = useState(null)
@@ -127,7 +127,7 @@ const useSwipeGesture = (onSwipeLeft, onSwipeRight) => {
                 }
         }
 
-        // Mouse events for desktop
+
         const [mouseStart, setMouseStart] = useState(null)
         const [mouseEnd, setMouseEnd] = useState(null)
         const [isDragging, setIsDragging] = useState(false)
@@ -183,7 +183,7 @@ const Calendar = () => {
         const scrollRef = useRef(null)
         const monthRefs = useRef({})
 
-        // Generate months for infinite scroll
+
         const generateMonths = useCallback(() => {
                 const months = []
                 const today = new Date()
@@ -200,14 +200,14 @@ const Calendar = () => {
 
         const [months] = useState(generateMonths());
 
-        // Get journal entries for a specific date
+
         const getEntriesForDate = useCallback((date) => {
                 return journalEntries.filter(entry => 
                         dateUtils.isSame(entry.date, date, 'day')
                 )
         }, []);
 
-        // Generate calendar days for a month
+
         const generateCalendarDays = useCallback((month) => {
                 const startOfMonth = dateUtils.startOfMonth(month)
                 const endOfMonth = dateUtils.endOfMonth(month)
@@ -225,7 +225,7 @@ const Calendar = () => {
                 return days
         }, [])
 
-        // Handle scroll to update current month
+
         useEffect(() => {
                 const handleScroll = () => {
 
@@ -278,7 +278,7 @@ const Calendar = () => {
                 setSelectedEntry(entry)
         }
 
-        // Swipe handlers for journal entry navigation
+
         const swipeHandlers = useSwipeGesture(
                 () => {
                        
@@ -307,7 +307,7 @@ const Calendar = () => {
                 }
         )
 
-        // Render calendar day
+
         const renderDay = useCallback((day, monthContext) => {
                 const isCurrentMonth = dateUtils.isSame(day, monthContext, 'month')
                 const entries = getEntriesForDate(day)
@@ -362,7 +362,7 @@ const Calendar = () => {
                 )
         }, [getEntriesForDate])
 
-        // Render month calendar
+
         const renderMonth = useCallback((month) => {
                 const days = generateCalendarDays(month)
                 const monthKey = dateUtils.format(month, 'YYYY-MM')
@@ -397,7 +397,7 @@ const Calendar = () => {
                         </div>
                 </div>
 
-                {/* Fixed Weekday Header */}
+
                 <div className="bg-white border-b border-gray-200 flex-shrink-0">
                         <div className="grid grid-cols-7 border-l border-gray-200">
                         {
@@ -410,7 +410,7 @@ const Calendar = () => {
                         </div>
                 </div>
 
-                {/* Scrollable Calendar */}
+
                 <div
                         ref={scrollRef}
                         className="flex-1 overflow-y-auto"
@@ -421,7 +421,7 @@ const Calendar = () => {
                         }
                 </div>
 
-        {/* Journal Entry Swipeable Overlay */}
+
         {selectedEntry && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center  justify-center ">
                         <div
@@ -480,7 +480,7 @@ const Calendar = () => {
                 </div>
         )}
 
-                {/* Add button */}
+
                 <div className="fixed bottom-6 right-6">
                         <button className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
                                 <div className="text-white text-2xl font-light">+</div>
