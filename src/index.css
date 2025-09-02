@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* 
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+} */
+
+body, html, #root {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background: #f9fbff; 
+        color: #1e3a8a; 
+        font-family: "Nunito", sans-serif;
+}
+
+
